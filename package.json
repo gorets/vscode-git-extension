@@ -3,6 +3,11 @@
   "displayName": "WebStorm Style Git",
   "description": "Git extension for VSCode with WebStorm-style context menu commands",
   "version": "0.0.1",
+  "publisher": "local",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gorets/vscode-git-extension"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -218,13 +223,15 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "lint": "eslint src --ext ts"
+    "lint": "eslint src --ext ts",
+    "package": "vsce package"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
     "@types/vscode": "^1.80.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "@vscode/vsce": "^2.22.0",
     "eslint": "^8.44.0",
     "typescript": "^5.1.6"
   }

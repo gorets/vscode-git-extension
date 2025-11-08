@@ -49,20 +49,25 @@ Right-click on any file or folder in the Explorer to access these Git commands:
 
 ## Installation
 
-### From Source
+Для установки расширения в VSCode или Cursor на macOS есть несколько способов.
 
-1. Clone this repository
-2. Run `npm install` to install dependencies
-3. Run `npm run compile` to build the extension
-4. Press `F5` in VSCode to open a new window with the extension loaded
+**📖 Подробная инструкция: [INSTALL.md](INSTALL.md)**
 
-### From VSIX
+### Быстрая установка (Рекомендуется)
 
-1. Download the `.vsix` file
-2. Open VSCode
-3. Go to Extensions view
-4. Click "..." menu → "Install from VSIX..."
-5. Select the downloaded file
+1. Установите vsce: `npm install -g @vscode/vsce`
+2. Упакуйте расширение: `npm run package`
+3. Установите .vsix файл в VSCode/Cursor:
+   - Откройте Extensions (⇧⌘X)
+   - Меню "..." → "Install from VSIX..."
+   - Выберите `webstorm-style-git-0.0.1.vsix`
+
+### Режим разработки (для тестирования)
+
+1. Откройте папку проекта в VSCode
+2. Нажмите `F5` (или `Fn+F5` на macOS)
+3. В новом окне Extension Development Host откройте Git репозиторий
+4. Кликните правой кнопкой на файл → появится меню **Git**
 
 ## Usage
 
