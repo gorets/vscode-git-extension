@@ -1,0 +1,231 @@
+{
+  "name": "webstorm-style-git",
+  "displayName": "WebStorm Style Git",
+  "description": "Git extension for VSCode with WebStorm-style context menu commands",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "SCM Providers",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "webstormGit.commitFile",
+        "title": "Git: Commit File..."
+      },
+      {
+        "command": "webstormGit.commitDirectory",
+        "title": "Git: Commit Directory..."
+      },
+      {
+        "command": "webstormGit.add",
+        "title": "Git: Add"
+      },
+      {
+        "command": "webstormGit.addToGitignore",
+        "title": "Git: Add to .gitignore"
+      },
+      {
+        "command": "webstormGit.showDiff",
+        "title": "Git: Show Diff"
+      },
+      {
+        "command": "webstormGit.compareWithRevision",
+        "title": "Git: Compare with Revision..."
+      },
+      {
+        "command": "webstormGit.compareWithBranch",
+        "title": "Git: Compare with Branch or Tag..."
+      },
+      {
+        "command": "webstormGit.showHistory",
+        "title": "Git: Show History"
+      },
+      {
+        "command": "webstormGit.annotate",
+        "title": "Git: Annotate with Git Blame"
+      },
+      {
+        "command": "webstormGit.rollback",
+        "title": "Git: Rollback..."
+      },
+      {
+        "command": "webstormGit.push",
+        "title": "Git: Push..."
+      },
+      {
+        "command": "webstormGit.pull",
+        "title": "Git: Pull..."
+      },
+      {
+        "command": "webstormGit.fetch",
+        "title": "Git: Fetch"
+      },
+      {
+        "command": "webstormGit.merge",
+        "title": "Git: Merge..."
+      },
+      {
+        "command": "webstormGit.rebase",
+        "title": "Git: Rebase..."
+      },
+      {
+        "command": "webstormGit.branches",
+        "title": "Git: Branches..."
+      },
+      {
+        "command": "webstormGit.newBranch",
+        "title": "Git: New Branch..."
+      },
+      {
+        "command": "webstormGit.newTag",
+        "title": "Git: New Tag..."
+      },
+      {
+        "command": "webstormGit.resetHead",
+        "title": "Git: Reset HEAD..."
+      },
+      {
+        "command": "webstormGit.stashChanges",
+        "title": "Git: Stash Changes..."
+      },
+      {
+        "command": "webstormGit.unstashChanges",
+        "title": "Git: Unstash Changes..."
+      },
+      {
+        "command": "webstormGit.manageRemotes",
+        "title": "Git: Manage Remotes..."
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "webstormGit.submenu",
+          "group": "2_workspace"
+        }
+      ],
+      "webstormGit.submenu": [
+        {
+          "command": "webstormGit.commitFile",
+          "when": "!explorerResourceIsFolder",
+          "group": "1_commit@1"
+        },
+        {
+          "command": "webstormGit.commitDirectory",
+          "when": "explorerResourceIsFolder",
+          "group": "1_commit@1"
+        },
+        {
+          "command": "webstormGit.add",
+          "group": "1_commit@2"
+        },
+        {
+          "command": "webstormGit.addToGitignore",
+          "group": "1_commit@3"
+        },
+        {
+          "command": "webstormGit.showDiff",
+          "when": "!explorerResourceIsFolder",
+          "group": "2_diff@1"
+        },
+        {
+          "command": "webstormGit.compareWithRevision",
+          "group": "2_diff@2"
+        },
+        {
+          "command": "webstormGit.compareWithBranch",
+          "group": "2_diff@3"
+        },
+        {
+          "command": "webstormGit.showHistory",
+          "group": "3_history@1"
+        },
+        {
+          "command": "webstormGit.annotate",
+          "when": "!explorerResourceIsFolder",
+          "group": "3_history@2"
+        },
+        {
+          "command": "webstormGit.rollback",
+          "group": "4_changes@1"
+        },
+        {
+          "command": "webstormGit.push",
+          "group": "5_sync@1"
+        },
+        {
+          "command": "webstormGit.pull",
+          "group": "5_sync@2"
+        },
+        {
+          "command": "webstormGit.fetch",
+          "group": "5_sync@3"
+        },
+        {
+          "command": "webstormGit.merge",
+          "group": "6_branch@1"
+        },
+        {
+          "command": "webstormGit.rebase",
+          "group": "6_branch@2"
+        },
+        {
+          "command": "webstormGit.branches",
+          "group": "7_branch_manage@1"
+        },
+        {
+          "command": "webstormGit.newBranch",
+          "group": "7_branch_manage@2"
+        },
+        {
+          "command": "webstormGit.newTag",
+          "group": "7_branch_manage@3"
+        },
+        {
+          "command": "webstormGit.resetHead",
+          "group": "7_branch_manage@4"
+        },
+        {
+          "command": "webstormGit.stashChanges",
+          "group": "8_stash@1"
+        },
+        {
+          "command": "webstormGit.unstashChanges",
+          "group": "8_stash@2"
+        },
+        {
+          "command": "webstormGit.manageRemotes",
+          "group": "9_remote@1"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "webstormGit.submenu",
+        "label": "Git"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.44.0",
+    "typescript": "^5.1.6"
+  }
+}
